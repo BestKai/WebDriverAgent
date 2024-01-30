@@ -162,13 +162,13 @@ shouldReturnAfterFirstMatch:(BOOL)shouldReturnAfterFirstMatch
   } else if ([usingText isEqualToString:@"class name"]) {
     return [element fb_descendantsMatchingClassName:value
                         shouldReturnAfterFirstMatch:shouldReturnAfterFirstMatch];
-  } else if ([usingText isEqualToString:@"class chain"]) {
+  } else if ([usingText isEqualToString:@"-ios class chain"]) {
     return [element fb_descendantsMatchingClassChain:value
                          shouldReturnAfterFirstMatch:shouldReturnAfterFirstMatch];
   } else if ([usingText isEqualToString:@"xpath"]) {
     return [element fb_descendantsMatchingXPathQuery:value
                          shouldReturnAfterFirstMatch:shouldReturnAfterFirstMatch];
-  } else if ([usingText isEqualToString:@"predicate string"]) {
+  } else if ([usingText isEqualToString:@"-ios predicate string"]) {
     return [element fb_descendantsMatchingPredicate:[NSPredicate predicateWithFormat:value]
                         shouldReturnAfterFirstMatch:shouldReturnAfterFirstMatch];
   } else if ([usingText isEqualToString:@"name"]

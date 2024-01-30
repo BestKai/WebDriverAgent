@@ -25,10 +25,10 @@
     [[FBRoute GET:@"/alert/text"] respondWithTarget:self action:@selector(handleAlertGetTextCommand:)],
     [[FBRoute GET:@"/alert/text"].withoutSession respondWithTarget:self action:@selector(handleAlertGetTextCommand:)],
     [[FBRoute POST:@"/alert/text"] respondWithTarget:self action:@selector(handleAlertSetTextCommand:)],
-    [[FBRoute POST:@"/alert/accept"] respondWithTarget:self action:@selector(handleAlertAcceptCommand:)],
-    [[FBRoute POST:@"/alert/accept"].withoutSession respondWithTarget:self action:@selector(handleAlertAcceptCommand:)],
-    [[FBRoute POST:@"/alert/dismiss"] respondWithTarget:self action:@selector(handleAlertDismissCommand:)],
-    [[FBRoute POST:@"/alert/dismiss"].withoutSession respondWithTarget:self action:@selector(handleAlertDismissCommand:)],
+    [[FBRoute POST:@"/accept_alert"] respondWithTarget:self action:@selector(handleAlertAcceptCommand:)],
+    [[FBRoute POST:@"/accept_alert"].withoutSession respondWithTarget:self action:@selector(handleAlertAcceptCommand:)],
+    [[FBRoute POST:@"/dismiss_alert"] respondWithTarget:self action:@selector(handleAlertDismissCommand:)],
+    [[FBRoute POST:@"/dismiss_alert"].withoutSession respondWithTarget:self action:@selector(handleAlertDismissCommand:)],
     [[FBRoute GET:@"/wda/alert/buttons"] respondWithTarget:self action:@selector(handleGetAlertButtonsCommand:)],
   ];
 }

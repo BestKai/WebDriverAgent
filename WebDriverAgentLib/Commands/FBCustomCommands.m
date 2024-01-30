@@ -39,7 +39,7 @@
   @[
     [[FBRoute POST:@"/timeouts"] respondWithTarget:self action:@selector(handleTimeouts:)],
     [[FBRoute POST:@"/wda/homescreen"].withoutSession respondWithTarget:self action:@selector(handleHomescreenCommand:)],
-    [[FBRoute POST:@"/wda/deactivateApp"] respondWithTarget:self action:@selector(handleDeactivateAppCommand:)],
+    [[FBRoute POST:@"/appium/app/background"] respondWithTarget:self action:@selector(handleDeactivateAppCommand:)],
     [[FBRoute POST:@"/wda/keyboard/dismiss"] respondWithTarget:self action:@selector(handleDismissKeyboardCommand:)],
     [[FBRoute POST:@"/wda/lock"].withoutSession respondWithTarget:self action:@selector(handleLock:)],
     [[FBRoute POST:@"/wda/lock"] respondWithTarget:self action:@selector(handleLock:)],
@@ -99,7 +99,7 @@
 
 + (id<FBResponsePayload>)handleDeactivateAppCommand:(FBRouteRequest *)request
 {
-  NSNumber *requestedDuration = request.arguments[@"duration"];
+  NSNumber *requestedDuration = request.arguments[@"seconds"];
   NSTimeInterval duration = (requestedDuration ? requestedDuration.doubleValue : 3.);
   NSError *error;
   if (![request.session.activeApplication fb_deactivateWithDuration:duration error:&error]) {
